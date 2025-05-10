@@ -11,8 +11,8 @@
 // @grant        none
 // @license      MIT
 // @homepageURL  https://github.com/cook369/leetcode-hide-locked
-// @downloadURL https://github.com/cook369/leetcode-hide-locked/blob/master/leetcode-hide-locked.js
-// @updateURL https://github.com/cook369/leetcode-hide-locked/blob/master/leetcode-hide-locked.js
+// @downloadURL https://github.moeyy.xyz/https://raw.githubusercontent.com/cook369/leetcode-hide-locked/refs/heads/master/leetcode-hide-locked.js
+// @updateURL https://github.moeyy.xyz/https://raw.githubusercontent.com/cook369/leetcode-hide-locked/refs/heads/master/leetcode-hide-locked.js
 // ==/UserScript==
 
 (function () {
