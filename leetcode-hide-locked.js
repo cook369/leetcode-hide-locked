@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name         Hide locked Leetcode problems
 // @namespace    http://tampermonkey.net/
-// @version      1.2.0
+// @version      1.3.0
 // @description  Hides locked Leetcode problems
 // @author       likp
 // @match        https://leetcode.com/problemset/
@@ -11,19 +11,15 @@
 // @grant        none
 // @license      MIT
 // @homepageURL  https://github.com/cook369/leetcode-hide-locked
-// @downloadURL https://github.moeyy.xyz/https://raw.githubusercontent.com/cook369/leetcode-hide-locked/refs/heads/master/leetcode-hide-locked.js
-// @updateURL https://github.moeyy.xyz/https://raw.githubusercontent.com/cook369/leetcode-hide-locked/refs/heads/master/leetcode-hide-locked.js
+// @downloadURL https://github.com/cook369/leetcode-hide-locked/blob/master/leetcode-hide-locked.js
+// @updateURL https://github.com/cook369/leetcode-hide-locked/blob/master/leetcode-hide-locked.js
 // ==/UserScript==
 
 (function () {
   "use strict";
   function removeLocked() {
     console.log("Begin remove");
-    const all = document
-      .getElementById("radix-:ri:")
-      .parentNode.parentNode.parentNode.lastElementChild.firstElementChild.querySelectorAll(
-        "a",
-      );
+    const all = document.querySelector(selector).lastElementChild.firstElementChild.querySelectorAll("a");
     Array.prototype.forEach.call(all, (row) => {
       row.style.display = "flex";
     });
@@ -38,10 +34,10 @@
   }
 
   let observerProblem = null;
+  const selector = "div.flex-col.items-center"
 
   const observerRoot = new MutationObserver((mutationsList, observer) => {
-    const problemList =
-      document.getElementById("radix-:ri:")?.parentNode?.parentNode?.parentNode;
+    const problemList = document.querySelector(selector)
     if (problemList) {
       console.log("ProblemList node has appeared");
       observerProblem = new MutationObserver((mutationsList, observer) =>
